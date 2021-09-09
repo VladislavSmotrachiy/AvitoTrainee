@@ -11,11 +11,12 @@ class StorageManager {
     
     static let shared = StorageManager()
     
-    let key = "date"
-    let date = Date().timeIntervalSince1970
+    private let key = "date"
+    private let date = Date().timeIntervalSince1970
     private let defaults = UserDefaults.standard
     private let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     private let archiveURL: URL
+    
     private init() {
         archiveURL = documentDirectory.appendingPathComponent("First").appendingPathExtension("plist")
     }
