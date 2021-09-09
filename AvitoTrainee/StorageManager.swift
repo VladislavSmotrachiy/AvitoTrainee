@@ -21,7 +21,7 @@ class StorageManager {
         archiveURL = documentDirectory.appendingPathComponent("First").appendingPathExtension("plist")
     }
     
-    func timerCache() -> Bool {
+    func checkTimerCache() -> Bool {
         guard let saveDate = defaults.object(forKey: key) as? Double
         else { return false }
         let result =  saveDate - date > 3600
@@ -29,7 +29,7 @@ class StorageManager {
     }
     
     func save(contact: Avito) {
-        var contacts = fetchContacts()
+        var contacts = fetchEmpolyees()
         contacts.insert(contact, at: 0)
         guard let data = try? PropertyListEncoder().encode(contacts)
         else { return }
@@ -37,7 +37,7 @@ class StorageManager {
         defaults.set(date, forKey: key)
     }
     
-    func fetchContacts() -> [Avito] {
+    func fetchEmpolyees() -> [Avito] {
         guard let data = try? Data(contentsOf: archiveURL) else { return [] }
         guard let cocktail = try? PropertyListDecoder().decode([Avito].self, from: data) else { return [] }
         return cocktail

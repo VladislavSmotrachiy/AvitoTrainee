@@ -17,8 +17,8 @@ class NetworkManager {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
-        if StorageManager.shared.timerCache() == false {
-            if let cache = StorageManager.shared.fetchContacts().first  {
+        if StorageManager.shared.checkTimerCache() == false {
+            if let cache = StorageManager.shared.fetchEmpolyees().first  {
                 complition(cache)
                 return
             } else {
@@ -29,10 +29,10 @@ class NetworkManager {
                     }
                     do {
                         guard url == response.url else { return }
-                        let cocktail = try JSONDecoder().decode(Avito.self, from: data)
-                        StorageManager.shared.save(contact: cocktail)
+                        let empolyee = try JSONDecoder().decode(Avito.self, from: data)
+                        StorageManager.shared.save(contact: empolyee)
                         DispatchQueue.main.async {
-                            complition(cocktail)
+                            complition(empolyee)
                         }
                     } catch let error {
                         print(error.localizedDescription)
