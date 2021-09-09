@@ -21,7 +21,8 @@ class StorageManager {
     }
     
     func timerCache() -> Bool {
-        let saveDate = defaults.object(forKey: key) as! Double
+        guard let saveDate = defaults.object(forKey: key) as? Double
+        else { return false }
         let result =  saveDate - date > 3600
         return result
     }

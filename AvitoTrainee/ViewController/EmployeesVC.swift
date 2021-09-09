@@ -16,7 +16,7 @@ class EmployeesVC: UITableViewController {
         super.viewDidLoad()
         fetchData(from: URLexemples.url.rawValue)
     }
-
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return avito?.company.employees.count ?? 0
@@ -51,7 +51,6 @@ class EmployeesVC: UITableViewController {
             content.text = person?.skills.joined(separator: ", ")
             content.image = UIImage(named: "skill")
         }
-        
         cell.contentConfiguration = content
         
         return cell
