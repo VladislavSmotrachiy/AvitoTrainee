@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		528FEE4226E906D500A822B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE4126E906D500A822B0 /* AppDelegate.swift */; };
 		528FEE4426E906D500A822B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE4326E906D500A822B0 /* SceneDelegate.swift */; };
-		528FEE4626E906D500A822B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE4526E906D500A822B0 /* ViewController.swift */; };
 		528FEE4926E906D500A822B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528FEE4726E906D500A822B0 /* Main.storyboard */; };
 		528FEE4B26E906D700A822B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528FEE4A26E906D700A822B0 /* Assets.xcassets */; };
 		528FEE4E26E906D700A822B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528FEE4C26E906D700A822B0 /* LaunchScreen.storyboard */; };
+		528FEE5626E90A3700A822B0 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE5526E90A3700A822B0 /* Company.swift */; };
+		528FEE5826E90AD200A822B0 /* EmployeesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE5726E90AD200A822B0 /* EmployeesVC.swift */; };
+		528FEE5C26E90B9000A822B0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE5B26E90B9000A822B0 /* NetworkManager.swift */; };
+		528FEE6026EA30AF00A822B0 /* StoregeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FEE5F26EA30AF00A822B0 /* StoregeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		528FEE3E26E906D500A822B0 /* AvitoTrainee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTrainee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FEE4126E906D500A822B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528FEE4326E906D500A822B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		528FEE4526E906D500A822B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		528FEE4826E906D500A822B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528FEE4A26E906D700A822B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528FEE4D26E906D700A822B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528FEE4F26E906D700A822B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		528FEE5526E90A3700A822B0 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		528FEE5726E90AD200A822B0 /* EmployeesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesVC.swift; sourceTree = "<group>"; };
+		528FEE5B26E90B9000A822B0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		528FEE5F26EA30AF00A822B0 /* StoregeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,32 @@
 			children = (
 				528FEE4126E906D500A822B0 /* AppDelegate.swift */,
 				528FEE4326E906D500A822B0 /* SceneDelegate.swift */,
-				528FEE4526E906D500A822B0 /* ViewController.swift */,
-				528FEE4726E906D500A822B0 /* Main.storyboard */,
+				528FEE5B26E90B9000A822B0 /* NetworkManager.swift */,
+				528FEE5F26EA30AF00A822B0 /* StoregeManager.swift */,
+				528FEE5A26E90B5A00A822B0 /* Model */,
+				528FEE5926E90AEF00A822B0 /* ViewController */,
 				528FEE4A26E906D700A822B0 /* Assets.xcassets */,
 				528FEE4C26E906D700A822B0 /* LaunchScreen.storyboard */,
+				528FEE4726E906D500A822B0 /* Main.storyboard */,
 				528FEE4F26E906D700A822B0 /* Info.plist */,
 			);
 			path = AvitoTrainee;
+			sourceTree = "<group>";
+		};
+		528FEE5926E90AEF00A822B0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				528FEE5726E90AD200A822B0 /* EmployeesVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		528FEE5A26E90B5A00A822B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				528FEE5526E90A3700A822B0 /* Company.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +162,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528FEE4626E906D500A822B0 /* ViewController.swift in Sources */,
+				528FEE5826E90AD200A822B0 /* EmployeesVC.swift in Sources */,
+				528FEE6026EA30AF00A822B0 /* StoregeManager.swift in Sources */,
 				528FEE4226E906D500A822B0 /* AppDelegate.swift in Sources */,
+				528FEE5C26E90B9000A822B0 /* NetworkManager.swift in Sources */,
 				528FEE4426E906D500A822B0 /* SceneDelegate.swift in Sources */,
+				528FEE5626E90A3700A822B0 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
