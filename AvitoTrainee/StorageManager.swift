@@ -24,7 +24,7 @@ class StorageManager {
     func checkTimerCache() -> Bool {
         guard let saveDate = defaults.object(forKey: key) as? Double
         else { return false }
-        let result =  saveDate - date > 3600
+        let result =  saveDate - date >= 3600
         return result
     }
     
@@ -41,5 +41,12 @@ class StorageManager {
         guard let data = try? Data(contentsOf: archiveURL) else { return [] }
         guard let cocktail = try? PropertyListDecoder().decode([Avito].self, from: data) else { return [] }
         return cocktail
+    }
+    
+    func removeEmployees(){
+        var result = fetchEmpolyees()
+        result.removeAll()
+        guard let data = try? PropertyListEncoder().encode(result) else { return }
+        try? data.write(to: archiveURL, options: .noFileProtection)
     }
 }
