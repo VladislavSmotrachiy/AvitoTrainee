@@ -36,7 +36,7 @@ class NetworkManager {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
-        if StorageManager.shared.checkTimerCache() == true {
+        if StorageManager.shared.checkTimerCache() == false {
             if let cache = StorageManager.shared.fetchEmpolyees().first {
                 complition(cache)
                 return
