@@ -10,8 +10,5 @@ import UIKit
 class Cell: UITableViewCell {
 
     @IBOutlet var icon: UIImageView!
-    
     @IBOutlet var label: UILabel!
-    
-    
 }

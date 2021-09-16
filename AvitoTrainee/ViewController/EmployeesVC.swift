@@ -7,14 +7,10 @@
 
 import UIKit
 
-
 class EmployeesVC: UITableViewController {
     
-  
-    
     private var avito: Avito?
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData(from: URLexemples.url.rawValue)
@@ -39,10 +35,9 @@ class EmployeesVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
-   
-
-   override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    UITableView.automaticDimension
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -51,10 +46,9 @@ class EmployeesVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
-    
         
         let person = avito?.company.employees[indexPath.section]
-    
+        
         switch indexPath.row {
         case 0:
             cell.icon.image = UIImage(named: "phone")
@@ -63,9 +57,8 @@ class EmployeesVC: UITableViewController {
         default:
             cell.icon.image = UIImage(named: "skill")
             cell.label.text = person?.skills.joined(separator: ", ")
-            
         }
- 
+        
         return cell
     }
     
