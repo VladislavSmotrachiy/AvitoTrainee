@@ -10,7 +10,10 @@ import UIKit
 
 class EmployeesVC: UITableViewController {
     
-    var avito: Avito?
+  
+    
+    private var avito: Avito?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,23 +39,33 @@ class EmployeesVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
+   
+
+   override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
+    
         
         let person = avito?.company.employees[indexPath.section]
-        var content = cell.defaultContentConfiguration()
-        
+    
         switch indexPath.row {
         case 0:
-            content.text = person?.phoneNumber
-            content.image = UIImage(named: "phone")
+            cell.icon.image = UIImage(named: "phone")
+            cell.label.text = person?.phoneNumber
+            
         default:
-            content.text = person?.skills.joined(separator: ", ")
-            content.image = UIImage(named: "skill")
+            cell.icon.image = UIImage(named: "skill")
+            cell.label.text = person?.skills.joined(separator: ", ")
+            
         }
-        cell.contentConfiguration = content
-        
+ 
         return cell
     }
     

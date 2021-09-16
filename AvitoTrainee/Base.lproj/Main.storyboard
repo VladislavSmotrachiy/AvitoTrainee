@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ecv-Ii-nys">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,17 +13,48 @@
             <objects>
                 <tableViewController id="pEJ-Gs-MST" customClass="EmployeesVC" customModule="AvitoTrainee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rPd-rV-Jg8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="BOc-ku-IQn">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="Cell" id="BOc-ku-IQn" customClass="Cell" customModule="AvitoTrainee" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="90.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BOc-ku-IQn" id="e0j-Bg-D7O">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOc-ku-IQn" id="e0j-Bg-D7O">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="2ql-2g-puC">
+                                            <rect key="frame" x="10" y="10" width="345" height="70.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bUq-uR-5OJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="70.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="jvD-HQ-4r8"/>
+                                                        <constraint firstAttribute="height" constant="70" id="qPK-eI-e5q"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-cd-d8W">
+                                                    <rect key="frame" x="93" y="0.0" width="252" height="70.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2ql-2g-puC" firstAttribute="leading" secondItem="e0j-Bg-D7O" secondAttribute="leading" constant="10" id="GPh-nG-gtH"/>
+                                        <constraint firstItem="2ql-2g-puC" firstAttribute="top" secondItem="e0j-Bg-D7O" secondAttribute="top" constant="10" id="RMf-vB-WXb"/>
+                                        <constraint firstAttribute="bottom" secondItem="2ql-2g-puC" secondAttribute="bottom" constant="10" id="gHf-I0-KyI"/>
+                                        <constraint firstAttribute="trailing" secondItem="2ql-2g-puC" secondAttribute="trailing" constant="20" id="gh0-nw-SrT"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="bUq-uR-5OJ" id="lyD-ku-Spw"/>
+                                    <outlet property="label" destination="MEB-cd-d8W" id="zU9-Hq-lJe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,7 +66,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YE8-0F-m0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852.1739130434785" y="41.517857142857139"/>
+            <point key="canvasLocation" x="1852" y="40.929535232383813"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="56T-ni-8lt">
@@ -42,7 +74,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ecv-Ii-nys" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lea-F4-LMM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
